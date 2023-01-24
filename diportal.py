@@ -63,6 +63,7 @@ def firstUrl(url0, data0):
     ])
     crl.perform()
     get_body = b_obj.getvalue()
+    crl.close()
     if re.search(b"Chybov", get_body.decode('latin-1').encode("utf-8")):
         print("Chyba, pravdepodobne cookie!")
         exit(0)
